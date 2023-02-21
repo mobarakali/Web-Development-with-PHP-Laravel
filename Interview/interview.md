@@ -1,4 +1,4 @@
-TOP 100 PHP INTERVIEW QUESTIONS AND ANSWERS
+### TOP 100 PHP INTERVIEW QUESTIONS AND ANSWERS
 
 1) WHAT IS PHP?
 PHP is a web language based on scripts that allow developers to dynamically create generated web pages.
@@ -15,12 +15,12 @@ Just use the PHP command line interface (CLI) and specify the file name of the s
 php script.php
 7) How to run the interactive PHP shell from the command line interface?
 Just use the PHP CLI program with the option -a as follows:
-php -a
-😎 What is the correct and the most two common way to start and finish a PHP block of code?
+```php -a```
+8) What is the correct and the most two common way to start and finish a PHP block of code?
 The two most common ways to start and finish a PHP script are:
-<?php [ --- PHP code---- ] ?> and <? [--- PHP code ---] ?>
+```<?php [ --- PHP code---- ] ?> and <? [--- PHP code ---] ?>```
 9) How can we display the output directly to the browser?
-To be able to display the output directly to the browser, we have to use the special tags <?= and ?>.
+To be able to display the output directly to the browser, we have to use the special tags ```<?= and ?>```.
 10) What is the main difference between PHP 4 and PHP 5?
 PHP 5 presents many additional OOP (Object Oriented Programming) features.
 11) Is multiple inheritances supported in PHP?
@@ -32,90 +32,90 @@ We use the operator ‘==’ to test is two objects are instanced from the same 
 14) How can PHP and HTML interact?
 It is possible to generate HTML through PHP scripts, and it is possible to pass pieces of information from HTML to PHP.
 15) What type of operation is needed when passing values through a form or an URL?
-If we would like to pass values through a form or an URL, then we need to encode and to decode them using htmlspecialchars() and urlencode().
+If we would like to pass values through a form or an URL, then we need to encode and to decode them using ```htmlspecialchars()``` and ```urlencode()```.
 16) How can PHP and Javascript interact?
 PHP and Javascript cannot directly interact since PHP is a server side language and Javascript is a client-side language. However, we can exchange variables since PHP can generate Javascript code to be executed by the browser and it is possible to pass specific variables back to PHP via the URL.
 17) What is needed to be able to use image function?
 GD library is needed to execute image functions.
-18) What is the use of the function ‘imagetypes()’?
-imagetypes() gives the image format and types supported by the current version of GD-PHP.
+18) What is the use of the function ```‘imagetypes()’```?
+```imagetypes()``` gives the image format and types supported by the current version of GD-PHP.
 19) What are the functions to be used to get the image’s properties (size, width, and height)?
-The functions are getimagesize() for size, imagesx() for width and imagesy() for height.
-20) How failures in execution are handled with include() and require() functions?
-If the function require() cannot access the file then it ends with a fatal error. However, the include() function gives a warning, and the PHP script continues to execute.
-21) What is the main difference between require() and require_once()?
-require(), and require_once() perform the same task except that the second function checks if the PHP script is already included or not before executing it.
-(same for include_once() and include())
+The functions are ```getimagesize()``` for size,``` imagesx()``` for width and ```imagesy()``` for height.
+20) How failures in execution are handled with ```include()``` and ```require()``` functions?
+If the function ```require()``` cannot access the file then it ends with a fatal error. However, the ```include()``` function gives a warning, and the PHP script continues to execute.
+21) What is the main difference between ```require()``` and ```require_once()```?
+```require()```, and ```require_once()``` perform the same task except that the second function checks if the PHP script is already included or not before executing it.
+(same for ```include_once()``` and ```include()```)
 22) How can I display text with a PHP script?
 Two methods are possible:
-<!--?php echo "Method 1"; print "Method 2"; ?-->
+```<!--?php echo "Method 1"; print "Method 2"; ?-->```
 23) How can we display information of a variable and readable by a human with PHP?
-To be able to display a human-readable result we use print_r().
+To be able to display a human-readable result we use ```print_r()```.
 24) How is it possible to set an infinite execution time for PHP script?
-The set_time_limit(0) added at the beginning of a script sets to infinite the time of execution to not have the PHP error ‘maximum execution time exceeded.’ It is also possible to specify this in the php.ini file.
+The ```set_time_limit(0)``` added at the beginning of a script sets to infinite the time of execution to not have the PHP error ‘maximum execution time exceeded.’ It is also possible to specify this in the php.ini file.
 25) What does the PHP error ‘Parse error in PHP – unexpected T_variable at line x’ means?
 This is a PHP syntax error expressing that a mistake at the line x stops parsing and executing the program.
 26) What should we do to be able to export data into an Excel file?
 The most common and used way is to get data into a format supported by Excel. For example, it is possible to write a .csv file, to choose for example comma as a separator between fields and then to open the file with Excel.
-27) What is the function file_get_contents() useful for?
-file_get_contents() lets reading a file and storing it in a string variable.
+27) What is the function ```file_get_contents()``` useful for?
+```file_get_contents()``` lets reading a file and storing it in a string variable.
 28) How can we connect to a MySQL database from a PHP script?
-To be able to connect to a MySQL database, we must use mysqli_connect() function as follows:
-<!--?php $database = mysqli_connect("HOST", "USER_NAME", "PASSWORD"); mysqli_select_db($database,"DATABASE_NAME"); ?-->
-29) What is the function mysql_pconnect() useful for?
-mysql_pconnect() ensure a persistent connection to the database, it means that the connection does not close when the PHP script ends.
+To be able to connect to a MySQL database, we must use ```mysqli_connect()``` function as follows:
+```<!--?php $database = mysqli_connect("HOST", "USER_NAME", "PASSWORD"); mysqli_select_db($database,"DATABASE_NAME"); ?-->```
+29) What is the function ```mysql_pconnect()``` useful for?
+```mysql_pconnect()``` ensure a persistent connection to the database, it means that the connection does not close when the PHP script ends.
 This function is not supported in PHP 7.0 and above
 30) How be the result set of Mysql handled in PHP?
-The result set can be handled using mysqli_fetch_array, mysqli_fetch_assoc, mysqli_fetch_object or mysqli_fetch_row.
+The result set can be handled using ```mysqli_fetch_array, mysqli_fetch_assoc, mysqli_fetch_object``` or ```mysqli_fetch_row```.
 31) How is it possible to know the number of rows returned in the result set?
-The function mysqli_num_rows() returns the number of rows in a result set.
+The function ```mysqli_num_rows()``` returns the number of rows in a result set.
 32) Which function gives us the number of affected entries by a query?
-mysqli_affected_rows() return the number of entries affected by an SQL query.
-33) What is the difference between mysqli_fetch_object() and mysqli_fetch_array()?
-The mysqli_fetch_object() function collects the first single matching record where mysqli_fetch_array() collects all matching records from the table in an array.
+```mysqli_affected_rows()``` return the number of entries affected by an SQL query.
+33) What is the difference between ```mysqli_fetch_object()``` and ```mysqli_fetch_array()```?
+The ```mysqli_fetch_object()``` function collects the first single matching record where ```mysqli_fetch_array()``` collects all matching records from the table in an array.
 34) How can we access the data sent through the URL with the GET method?
-To access the data sent via the GET method, we use $_GET array like this:
-www.url.com?var=value $variable = $_GET["var"]; this will now contain 'value'
+To access the data sent via the GET method, we use ```$_GET``` array like this:
+```www.url.com?var=value $variable = $_GET["var"];``` this will now contain 'value'
 35) How can we access the data sent through the URL with the POST method?
-To access the data sent this way, you use the $_POST array.
+To access the data sent this way, you use the ```$_POST``` array.
 Imagine you have a form field called ‘var’ on the form when the user clicks submit to the post form, you can then access the value like this:
-$_POST["var"];
+```$_POST["var"];```
 36) How can we check the value of a given variable is a number?
-It is possible to use the dedicated function, is_numeric() to check whether it is a number or not.
+It is possible to use the dedicated function, `is_numeric()` to check whether it is a number or not.
 37) How can we check the value of a given variable is alphanumeric?
 It is possible to use the dedicated function, ctype_alnum to check whether it is an alphanumeric value or not.
 38) How do I check if a given variable is empty?
-If we want to check whether a variable has a value or not, it is possible to use the empty() function.
-39) What does the unlink() function mean?
-The unlink() function is dedicated for file system handling. It simply deletes the file given as entry.
-40) What does the unset() function mean?
-The unset() function is dedicated for variable management. It will make a variable undefined.
+If we want to check whether a variable has a value or not, it is possible to use the `empty()` function.
+39) What does the `unlink()` function mean?
+The `unlink()` function is dedicated for file system handling. It simply deletes the file given as entry.
+40) What does the `unset()` function mean?
+The `unset()` function is dedicated for variable management. It will make a variable undefined.
 41) How do I escape data before storing it in the database?
 The addslashes function enables us to escape data before storage into the database.
 42) How is it possible to remove escape characters from a string?
 The stripslashes function enables us to remove the escape characters before apostrophes in a string.
 43) How can we automatically escape incoming data?
 We have to enable the Magic quotes entry in the configuration file of PHP.
-44) What does the function get_magic_quotes_gpc() means?
-The function get_magic_quotes_gpc() tells us whether the magic quotes is switched on or no.
+44) What does the function `get_magic_quotes_gpc()` means?
+The function `get_magic_quotes_gpc()` tells us whether the magic quotes is switched on or no.
 45) Is it possible to remove the HTML tags from data?
-The strip_tags() function enables us to clean a string from the HTML tags.
+The `strip_tags()` function enables us to clean a string from the HTML tags.
 46) what is the static variable in function useful for?
 A static variable is defined within a function only the first time, and its value can be modified during function calls as follows:
-<!--?php function testFunction() { static $testVariable = 1; echo $testVariable; $testVariable++; } testFunction(); //1 testFunction(); //2 testFunction(); //3 ?-->
+`<!--?php function testFunction() { static $testVariable = 1; echo $testVariable; $testVariable++; } testFunction(); //1 testFunction(); //2 testFunction(); //3 ?-->`
 47) How can we define a variable accessible in functions of a PHP script?
 This feature is possible using the global keyword.
 48) How is it possible to return a value from a function?
-A function returns a value using the instruction ‘return $value;’.
+A function returns a value using the instruction `‘return $value;’`.
 49) What is the most convenient hashing method to be used to hash passwords?
-It is preferable to use crypt() which natively supports several hashing algorithms or the function hash() which supports more variants than crypt() rather than using the common hashing algorithms such as md5, sha1 or sha256 because they are conceived to be fast. Hence, hashing passwords with these algorithms can create vulnerability.
+It is preferable to use `crypt()` which natively supports several hashing algorithms or the function `hash()` which supports more variants than `crypt()` rather than using the common hashing algorithms such as md5, sha1 or sha256 because they are conceived to be fast. Hence, hashing passwords with these algorithms can create vulnerability.
 50) Which cryptographic extension provide generation and verification of digital signatures?
 The PHP-OpenSSL extension provides several cryptographic operations including generation and verification of digital signatures.
 51) How is a constant defined in a PHP script?
-The define() directive lets us defining a constant as follows:
+The `define()` directive lets us defining a constant as follows:
 define ("ACONSTANT", 123);
 52) How can you pass a variable by reference?
-To be able to pass a variable by reference, we use an ampersand in front of it, as follows $var1 = &$var2
+To be able to pass a variable by reference, we use an ampersand in front of it, as follows `$var1 = &$var2`
 53) Will a comparison of an integer 12 and a string “13” work in PHP?
 “13” and 12 can be compared in PHP since it casts everything to the integer type.
 54) How is it possible to cast types in PHP?
@@ -133,9 +133,8 @@ It is composed of three expressions: a condition, and two operands describing wh
 Expression_1?Expression_2 : Expression_3;
 57) What is the function func_num_args() used for?
 The function func_num_args() is used to give the number of parameters passed into a function.
-58) If the variable $var1 is set to 10 and the $var2 is set to the character var1, what’s the value of $$var2?
-$$var2 contains the value 10.
-59) What does accessing a class via :: means?
+58) If the variable $var1 is set to 10 and the $var2 is set to the character var1, what’s the value of ` $$var2` ?  `$$var2 contains the value 10.`
+59) What does accessing a class via` ::` means?
 :: is used to access static methods that do not require object initialization.
 60) In PHP, objects are they passed by value or by reference?
 In PHP, objects are passed by reference.
