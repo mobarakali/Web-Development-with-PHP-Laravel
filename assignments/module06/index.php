@@ -5,48 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment: Module 06</title>
-    <style>
-      /* Center the form on the page */
-      form, ul {
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      /* Style the form labels */
-      label, li {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-
-      /* Style the form input fields */
-      input[type="text"],
-      input[type="email"],
-      input[type="password"],
-      input[type="file"] {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
-
-      /* Style the form submit button */
-      button[type="submit"] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-
-      button[type="submit"]:hover {
-        background-color: #3e8e41;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <!-- 

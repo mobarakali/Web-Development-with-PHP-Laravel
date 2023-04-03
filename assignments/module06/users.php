@@ -2,8 +2,9 @@
 <html>
   <head>
     <title>User Data</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-  <body>
+  <body class="users">
     <h1>Users Info</h1>
     <table>
       <tr>
