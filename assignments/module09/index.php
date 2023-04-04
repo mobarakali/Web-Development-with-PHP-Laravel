@@ -1,7 +1,8 @@
 <?php
 $title = "Home Page";
 $page = "home";
-include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/header.php';
+require_once 'includes/header.php';
+
 ?>
 <section class="container py-5">
     <div class="row">
@@ -20,7 +21,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/header.
         <div class="col-md-6">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-primary">CSS</strong>
+                    <strong class="d-inline-block mb-2 text-primary">HTML</strong>
                     <h3 class="mb-0">Featured post</h3>
                     <div class="mb-1 text-muted">Nov 12</div>
                     <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
@@ -34,7 +35,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/header.
         <div class="col-md-6">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-success">HTML</strong>
+                    <strong class="d-inline-block mb-2 text-success">CSS</strong>
                     <h3 class="mb-0">Post title</h3>
                     <div class="mb-1 text-muted">Nov 11</div>
                     <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
@@ -49,4 +50,4 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/header.
 </main>
 
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/footer.php';
+require_once 'includes/footer.php';

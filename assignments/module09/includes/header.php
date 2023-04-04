@@ -11,4 +11,5 @@
 </head>
 
 <body>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/navigation.php'; ?>
+    <?php 
+    require_once 'navigation.php'; ?>
