@@ -1,7 +1,7 @@
 <?php
 $title = "Our Blog";
 $page = 'blog';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/header.php';
+require_once 'includes/header.php';
 ?>
 <!--Code For Blog page-->
     <div class="p-3 p-md-5 m-md-3 text-center bg-light">
@@ -121,4 +121,4 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/header.
 
 
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/footer.php';
+require_once 'includes/footer.php';

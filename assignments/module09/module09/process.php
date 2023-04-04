@@ -1,7 +1,7 @@
 <?php
-$title = "Contact Page";
+$title = "Process Page";
 $page = "contact";
-include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/header.php';
+require_once 'includes/header.php';
 ?>
 <!--Contact Page Heading -->
 
@@ -52,4 +52,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
 </div>
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/footer.php'; ?>
+<?php require_once 'includes/footer.php'; ?>

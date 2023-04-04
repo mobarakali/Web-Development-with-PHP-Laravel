@@ -11,7 +11,7 @@ The blog can be found live at [https://demos.mobarak.com.bd/module09/](https://d
 
 ## Challenges
 
-The main challenge I faced was getting the blog to work on Live Server. ``include_once()`` is not working on live server but on my Local Server. After lot of frustation [Stake Overflow](https://stackoverflow.com/questions/23016133/require-once-not-working-on-live-server) helped me to solve the issue. ``$_SERVER['DOCUMENT_ROOT']`` issue aslo not worked for me! Finaly I changed my code to ``require_once 'includes/header.php';`` and it worked!
+The main challenge I faced was getting the blog to work on Live Server. ``include_once()`` is not working on live server but on my Local Server. After lot of frustation [Stake Overflow](https://stackoverflow.com/questions/23016133/require-once-not-working-on-live-server) helped me to solve the issue.
 
 ## Conclusion
 

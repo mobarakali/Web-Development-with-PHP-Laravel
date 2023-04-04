@@ -1,7 +1,7 @@
 <?php
 $title = "Contact Page";
 $page = "contact";
-include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/header.php';
+require_once 'includes/header.php';
 ?>
 <!--Contact Page Heading -->
 <div class="p-3 p-md-5 m-md-3 text-center bg-light">
@@ -37,6 +37,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/header.
 </div>
 
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/footer.php';
+require_once 'includes/footer.php';
 ?>
 

@@ -1,0 +1,12 @@
+[04-Apr-2023 14:55:27 UTC] PHP Warning:  Undefined variable $home in /home/mobarakcom/public_html/demos/module09/includes/navigation.php on line 14
+[04-Apr-2023 14:55:27 UTC] PHP Warning:  Undefined variable $contact in /home/mobarakcom/public_html/demos/module09/includes/navigation.php on line 16
+[04-Apr-2023 14:55:29 UTC] PHP Warning:  Undefined variable $blog in /home/mobarakcom/public_html/demos/module09/includes/navigation.php on line 15
+[04-Apr-2023 14:55:29 UTC] PHP Warning:  Undefined variable $contact in /home/mobarakcom/public_html/demos/module09/includes/navigation.php on line 16
+[04-Apr-2023 14:55:30 UTC] PHP Warning:  Undefined variable $home in /home/mobarakcom/public_html/demos/module09/includes/navigation.php on line 14
+[04-Apr-2023 14:55:30 UTC] PHP Warning:  Undefined variable $contact in /home/mobarakcom/public_html/demos/module09/includes/navigation.php on line 16
+[04-Apr-2023 14:55:31 UTC] PHP Warning:  Undefined variable $home in /home/mobarakcom/public_html/demos/module09/includes/navigation.php on line 14
+[04-Apr-2023 14:55:31 UTC] PHP Warning:  Undefined variable $blog in /home/mobarakcom/public_html/demos/module09/includes/navigation.php on line 15
+[04-Apr-2023 14:56:54 UTC] PHP Warning:  Undefined variable $home in /home/mobarakcom/public_html/demos/module09/includes/navigation.php on line 14
+[04-Apr-2023 14:56:54 UTC] PHP Warning:  Undefined variable $contact in /home/mobarakcom/public_html/demos/module09/includes/navigation.php on line 16
+[04-Apr-2023 14:56:57 UTC] PHP Warning:  Undefined variable $home in /home/mobarakcom/public_html/demos/module09/includes/navigation.php on line 14
+[04-Apr-2023 14:56:57 UTC] PHP Warning:  Undefined variable $contact in /home/mobarakcom/public_html/demos/module09/includes/navigation.php on line 16

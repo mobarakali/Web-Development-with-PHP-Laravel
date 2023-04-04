@@ -1,7 +1,8 @@
 <?php
 $title = "Home Page";
 $page = "home";
-include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/header.php';
+require_once 'includes/header.php';
+
 ?>
 <section class="container py-5">
     <div class="row">
@@ -49,4 +50,4 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/header.
 </main>
 
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/assignments/module09/includes/footer.php';
+require_once 'includes/footer.php';
