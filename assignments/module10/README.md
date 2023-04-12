@@ -37,11 +37,11 @@ j)Test your website in multiple browsers and devices to ensure that it works as 
 Submit Instructions : 
 
 
-1.Submit your completed assignment, including the HTML and CSS files, 
+1. Submit your completed assignment, including the HTML and CSS files, 
 
 
 2. Submit your github repository link
 
 
-3.Create a note.txt file in the repository and include your live link of your deployed version.(optional)
+3. Create a note.txt file in the repository and include your live link of your deployed version.(optional)
 
