@@ -1,4 +1,3 @@
-This Assignment can be found live at [https://demos.mobarak.com.bd/module12/](https://demos.mobarak.com.bd/module12/)
 
 Netlify URL: https://bright-cheesecake-960b7f.netlify.app/assignments/module12/
 
