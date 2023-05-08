@@ -10,7 +10,7 @@
 	<style>
 		:root{
 			--color1: hsla(0, 100%, 50%, 0.5);	/* red */
-			--color2: hsla(60, 100%, 50%, 0.5);	/* yellow */
+			--color2: hsla(60, 100%, 50%, 0.25);	/* yellow */
 		}
 		body {
 			font-family: "Open Sans", sans-serif;
@@ -28,18 +28,21 @@
 		}
 
 		form {
-			background-color: rgba(255, 255, 255, 0.7);
-			padding: 20px;
+			padding: 30px;
 			border-radius: 10px;
 			max-width: 500px;
 			margin: 0 auto;
-			background: linear-gradient(120deg, var(--color1), var(--color2)), url("https://picsum.photos/750") no-repeat center center fixed cover;
+			background-image:  linear-gradient(120deg, var(--color1), var(--color2)),url("https://picsum.photos/750");
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
 
 		label {
 			display: block;
 			font-size: 24px;
 			margin-bottom: 10px;
+			color: #fff;
 		}
 
 		input[type="number"] {
