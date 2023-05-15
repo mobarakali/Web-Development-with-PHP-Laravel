@@ -1,23 +1,26 @@
 # Laravel Installation and Folder Structure Assignment
+    This is the answer paper to the assiment.
 
 ## Part 1: Laravel Installation
 
-Install the latest version of Laravel using either Composer or the Laravel installer. Document the steps you took to install Laravel.
+    Install the latest version of Laravel using either Composer or the Laravel installer. Document the steps you took to install Laravel.
 
 ### Installation Documentation:
 
 1. Install Composer on your Mac Using  ` $ $brew install composer`
 2. Type the following command to install laravel project ` composer creat-project laravel/laravel project-name `
 
+Next Task: 
+
+    Verify that Laravel is installed and working correctly by creating a new Laravel project and running the development server. Take a screenshot of the running server.
+
+1. To reun the server we have to use the following command `php artisan serve`
+2. Server URL: http://127.0.0.1:8000
+
+![Partone Screenshot](laravel.png)
 
 
-Verify that Laravel is installed and working correctly by creating a new Laravel project and running the development server. Take a screenshot of the running server.
-
-
-
-
-
-### Part 2: Laravel Folder Structure
+## Part 2: Laravel Folder Structure
 
 Here is a brief description of each of the folders in a typical Laravel project:
 
@@ -43,31 +46,16 @@ Here is a brief description of each of the folders in a typical Laravel project:
 
  
 
-
 ### Create a new route in your Laravel project that displays a simple "Hello, World!" message. Take a screenshot of the running route.
 
+
+First we have to go to the `routes` folder and open the `web.php `file. Inside the `web.php` file, need to add the following code:
 `
 Route::get('/hello', function () {
     return 'Hello, World!';
 });
 `
- 
+the url will be: http://127.0.0.1:8000/hello
+![Part 2 Screenshot](route.png)
 
-
-What you should Submit :
-
-
-
-
-Submit your github repository link.
-
-
-
-
-In this repository create a document containing the screenshots from Part 1 and 
-
-
-
-
-Part 2, along with a description of the steps you took to complete the assignment.
 
