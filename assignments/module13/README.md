@@ -55,7 +55,9 @@ Route::get('/hello', function () {
     return 'Hello, World!';
 });
 `
+
 the url will be: http://127.0.0.1:8000/hello
+
 ![Part 2 Screenshot](route.png)
 
 
