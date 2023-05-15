@@ -7,7 +7,7 @@
 
 ### Installation Documentation:
 
-1. Install Composer on your Mac Using  ` $ $brew install composer`
+1. Install Composer on your Mac Using  ` $brew install composer`
 2. Type the following command to install laravel project ` composer creat-project laravel/laravel project-name `
 
 Next Task: 
