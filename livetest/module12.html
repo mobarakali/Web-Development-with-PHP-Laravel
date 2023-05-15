@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add List Item</title>
+</head>
+<body>
+	<ul id="myList">
+		<li>Oranges</li>
+		<li>Bananas</li>
+		<li>Grapes</li>
+	</ul>
+
+    Write a JavaScript function that selects an element with an id of "myList" and adds a new list item with the text "Apples" to the end of the list
+
+
+	<script>
+		function addListItem() {
+			// Get the list element
+			const myList = document.getElementById("myList");
+
+			// Create a new list item
+			const newListItem = document.createElement("li");
+			newListItem.innerText = "Apples";
+
+			// Add the new list item to the end of the list
+			myList.appendChild(newListItem);
+		}
+
+		// Call the function to add the new list item
+		addListItem();
+	</script>
+</body>
+</html>
+
+
+
