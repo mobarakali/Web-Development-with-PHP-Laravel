@@ -167,7 +167,7 @@ protected $middleware = [
 ```
 We need to make sure that your Laravel application has the appropriate write permissions for this task. 
 
-# Task 4: Route Middleware
+### Task 4: Route Middleware
 
 
 Create a route group for authenticated users only. This group should include routes for /profile and /settings. Apply a middleware called AuthMiddleware to the route group to ensure only authenticated users can access these routes.
