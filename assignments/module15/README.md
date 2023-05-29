@@ -168,67 +168,292 @@ protected $middleware = [
 We need to make sure that your Laravel application has the appropriate write permissions for this task. 
 
 ### Task 4: Route Middleware
-
-
 Create a route group for authenticated users only. This group should include routes for /profile and /settings. Apply a middleware called AuthMiddleware to the route group to ensure only authenticated users can access these routes.
+### Ans: 
+To create a route group for authenticated users only in Laravel, which includes routes for /profile and /settings and applies a middleware called AuthMiddleware to ensure only authenticated users can access these routes, We have to follow these steps:
+#1 in the routes/web.php we need to add the following code to create a route group and apply the AuthMiddleware middleware:
+```
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', function () {
+        // Route logic for profile
+    });
+
+    Route::get('/settings', function () {
+        // Route logic for settings
+    });
+
+    // Other routes for authenticated users
+});
+
+```
 
 
- 
-
-
-Task 5: Controller
-
-
+### Task 5: Controller
 Create a controller called ProductController that handles CRUD operations for a resource called Product. Implement the following methods:
-
-
- 
 
 
 index(): Display a list of all products.
 
-
 create(): Display the form to create a new product.
-
 
 store(): Store a newly created product.
 
-
 edit($id): Display the form to edit an existing product.
-
 
 update($id): Update the specified product.
 
-
 destroy($id): Delete the specified product.
 
+# Ans:
+ #1 Run the following command to generate the ProductController:
 
- 
+```
+php artisan make:controller ProductController --resource
+```
+#2 Open the app/Http/Controllers/ProductController.php and replace the content of the file with the following code:
+```
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Product;
+use Illuminate\Http\Request;
+
+class ProductController extends Controller
+{
+    public function index()
+    {
+        $products = Product::all();
+
+        return view('products.index', ['products' => $products]);
+    }
+
+    public function create()
+    {
+        return view('products.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            // Add validation rules for other fields
+        ]);
+
+        $product = Product::create($request->all());
+
+        // Redirect to the product's details page or any other desired location
+        return redirect()->route('products.show', ['product' => $product->id]);
+    }
+
+    public function edit($id)
+    {
+        $product = Product::findOrFail($id);
+
+        return view('products.edit', ['product' => $product]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            // Add validation rules for other fields
+        ]);
+
+        $product = Product::findOrFail($id);
+        $product->update($request->all());
+
+        // Redirect to the product's details page or any other desired location
+        return redirect()->route('products.show', ['product' => $product->id]);
+    }
+
+    public function destroy($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        // Redirect to the product listing or any other desired location
+        return redirect()->route('products.index');
+    }
+}
+```
+Make sure to define the necessary routes in the routes/web.php file to map these controller actions to appropriate URLs.
 
 
-Task 6: Single Action Controller
-
-
+### Task 6: Single Action Controller
 Create a single action controller called ContactController that handles a contact form submission. Implement the __invoke() method to process the form submission and send an email to a predefined address with the submitted data.
 
+### Ans 
+#1 Run the following command to generate the ContactController:
+ ```
+php artisan make:controller ContactController --invokable
+```
+#2 Open the app/Http/Controllers/ContactController.php file and Replace the content of the file with the following code:
+```
+<?php
 
- 
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
+class ContactController extends Controller
+{
+    public function __invoke(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'message' => 'required|string',
+        ]);
+
+        $data = $request->only(['name', 'email', 'message']);
+
+        // Send email to predefined address
+        Mail::to('contact@example.com')->send(new ContactFormEmail($data));
+
+        // You can perform additional actions here, such as saving the form data to a database
+
+        // Redirect or return a response as needed
+        return redirect()->back()->with('success', 'Message sent successfully!');
+    }
+}
+
+```
+The ContactController class in the provided code is created as a controller with only one action, handled by the "__invoke()" method. This method is responsible for processing the form submission and sending an email to the address specified as "contact@example.com" using Laravel's Mail facade. The data submitted through the form is also passed on to the ContactFormEmail mailable class.
 
 
-Task 7: Resource Controller
 
-
+### Task 7: Resource Controller
 Create a resource controller called PostController that handles CRUD operations for a resource called Post. Ensure that the controller provides the necessary methods for the resourceful routing conventions in Laravel.
+### Ans:
 
+To create a resource controller called PostController in Laravel that handles CRUD operations for a resource called Post and provides the necessary methods for resourceful routing conventions, follow steps are need:
 
+#1 Run the following command to generate the PostController:
+```
+php artisan make:controller PostController --resource
+```
+#2 In the app/Http/Controllers/PostController.php and the following code:
+```
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Post;
+use Illuminate\Http\Request;
+
+class PostController extends Controller
+{
+    public function index()
+    {
+        $posts = Post::all();
+
+        return view('posts.index', ['posts' => $posts]);
+    }
+
+    public function create()
+    {
+        return view('posts.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'content' => 'required|string',
+        ]);
+
+        $post = Post::create($request->all());
+
+        // Redirect to the post's details page or any other desired location
+        return redirect()->route('posts.show', ['post' => $post->id]);
+    }
+
+    public function show($id)
+    {
+        $post = Post::findOrFail($id);
+
+        return view('posts.show', ['post' => $post]);
+    }
+
+    public function edit($id)
+    {
+        $post = Post::findOrFail($id);
+
+        return view('posts.edit', ['post' => $post]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'content' => 'required|string',
+        ]);
+
+        $post = Post::findOrFail($id);
+        $post->update($request->all());
+
+        // Redirect to the post's details page or any other desired location
+        return redirect()->route('posts.show', ['post' => $post->id]);
+    }
+
+    public function destroy($id)
+    {
+        $post = Post::findOrFail($id);
+        $post->delete();
+
+        // Redirect to the post listing or any other desired location
+        return redirect()->route('posts.index');
+    }
+}
+```
+To proceed, ensure that your app has a Post model defined in app/Models/Post.php, and corresponding views, such as index.blade.php, create.blade.php, show.blade.php, etc., in the resources/views/posts directory. Once this is done, define the routes in the routes/web.php file using the Route::resource() method to map the controller actions to the appropriate URLs. Here is an example of how you can define the resourceful routes for the PostController:
+
+```
+Route::resource('posts', 'PostController');
+
+```
  
 
 
-Task 8: Blade Template Engine
-
-
+### Task 8: Blade Template Engine
 Create a Blade view called welcome.blade.php that includes a navigation bar and a section displaying the text "Welcome to Laravel!".
 
+### Ans
+#1 We need to create the file  welcome.blade.php in the resources/views directory and add following code
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Laravel</title>
+    <!-- Add your CSS and other head elements as needed -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <!-- Add your navigation bar HTML structure and styling -->
+    </nav>
+
+    <!-- Content Section -->
+    <section>
+        <h1>Welcome to Laravel!</h1>
+    </section>
+
+    <!-- Add your JavaScript and other body elements as needed -->
+</body>
+</html>
+```
+
+#2 To include this view in the application, we can use the view() function in the routes or controller methods.
+```
+Route::get('/', function () {
+    return view('welcome');
+});
+```
+This route will render the welcome.blade.php view when accessing the root URL of laravel application.
 
  
 
