@@ -79,18 +79,22 @@ public function up()
     });
 }
 ```
- and save the file and rurn the command: `php artisan migrate` to add the column.
+ and save the file and rurn the command: `php artisan migrate` to add the column. if the migration not work properly we need to run `php artisan migrate:rollback` and then re run the `php artisan migrate` to update the change in the database.
 
 
-Task 5:
-
-
- 
-
+### Task 5:
 
 Create a new migration file named "add_category_to_products_table" that will be responsible for adding a new column called "category" to the "products" table. The "category" column should be a string column with a maximum length of 50 characters.
+### Answer: 
+To create a new migration file named `add_category_to_products_table` and add a new column called `category` to the `products` table with the specified properties, follow these steps:
 
+#1 Run the following command to create a new migration file:
+```
+php artisan make:migration add_category_to_products_table --table=products
+```
+The above command will create a new migration file with the name `add_category_to_products_table` and the `--table=products` option specifies that we want to modify the `products` table.
 
+#2 
  
 
 
