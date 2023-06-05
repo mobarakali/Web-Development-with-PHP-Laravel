@@ -200,6 +200,6 @@ After creating the migration file for the "orders" table, run the migration to c
 ### Answer:
 #1 Now run `php artisan migrate` to complet the migration.
 
-The database tabel will look like the following image.
+Now the database tabel will look like the following image.
  
  ![Task 8](task8.jpg) 
