@@ -94,7 +94,41 @@ php artisan make:migration add_category_to_products_table --table=products
 ```
 The above command will create a new migration file with the name `add_category_to_products_table` and the `--table=products` option specifies that we want to modify the `products` table.
 
-#2 
+#2 From the `database/migrations` directory open the new file that should be something like {timestamp}_add_category_to_products_table.php.
+
+#3 Inside it's `up()` method. Replace its contents with the following code:
+```
+public function up()
+    {
+        Schema::table('products', function (Blueprint $table) {
+            $table->string('category', 50)->after('description');
+        });
+    }
+```
+#4 Save the change and the file will look like this:
+```
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class AddCategoryToProductsTable extends Migration
+{
+    public function up()
+    {
+        Schema::table('products', function (Blueprint $table) {
+            $table->string('category', 50)->after('description');
+        });
+    }
+
+    public function down()
+    {
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn('category');
+        });
+    }
+}
+```
+#5 Now run `php artisan migrate` to complet the migration.
  
 
 
