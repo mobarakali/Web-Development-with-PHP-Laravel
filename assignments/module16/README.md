@@ -203,4 +203,4 @@ After creating the migration file for the "orders" table, run the migration to c
 Now the database tabel will look like the following image.
 
 
- ![Task 5](/assignments/module16/task8.jpg) 
+ ![Task 8](task8.jpg) 
