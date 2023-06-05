@@ -128,50 +128,78 @@ class AddCategoryToProductsTable extends Migration
     }
 }
 ```
-#5 Now run `php artisan migrate` to complet the migration.
- 
-
-
-Task 6:
-
-
- 
-
+### Task 6:
 
 After creating the new migration file, run the migration to add the "category" column to the "products" table.
 
+### Answer:
+#1 Now run `php artisan migrate` to complet the migration.
 
+The database tabel will look like the following image.
+ 
+ ![Task 5](task5.jpg)  
  
 
 
-Task 7:
-
-
- 
-
+### Task 7:
 
 Create a new migration file named "create_orders_table" that will be responsible for creating a table called "orders" in the database. The "orders" table should have the following columns:
 
 
- 
-
-
 id: an auto-incrementing integer and primary key.
-
 
 product_id: an unsigned integer column to establish a foreign key relationship with the "id" column of the "products" table.
 
-
 quantity: an integer column to store the quantity of products ordered.
-
 
 created_at: a timestamp column to store the creation date and time.
 
-
 updated_at: a timestamp column to store the last update date and time.
 
+### Answer:
+To create a new migration file named `create_orders_table` with the specified columns for the `orders` table in a Laravel project, follow these steps:
 
-Task 8:
+#1 run the folloing artisan command:
+``` 
+php artisan make:migration create_orders_table --create=orders
+```
+ This command will create a new migration file with the name `create_orders_table` and the `--create=orders` option specifies that we want to create a new table named `orders`.
 
+ #2 From the `database/migrations` directory open the new file that should be something like `{timestamp}_create_orders_table.php`. Inside the `up()` methode update the code and after that the file will look like this: 
+ ```
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateOrdersTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('orders', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('product_id');
+            $table->integer('quantity');
+            $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products');
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('orders');
+    }
+}
+```
+#3 Save the file for future use.
+
+### Task 8:
 
 After creating the migration file for the "orders" table, run the migration to create the "orders" table in the database.
+
+### Answer:
+#1 Now run `php artisan migrate` to complet the migration.
+
+The database tabel will look like the following image.
+ 
+ ![Task 8](task8.jpg) 
