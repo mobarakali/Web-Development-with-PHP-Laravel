@@ -3,15 +3,6 @@ Assignment: Query Builder in Laravel
 
     Note: It is asume that the appropriate database configuration is set up in the Laravel application for the code example to work correctly.
 
-## Instructions:
-Read the given code snippets and questions carefully.
-
-Write the code that best answers each question.
-
-Make sure to provide clear and concise answers.
-
-Submit your completed assignment within the given time frame.
-
 ## Questions:
 
 ## 1.Explain what Laravel's query builder is and how it provides a simple and elegant way to interact with databases.
