@@ -267,10 +267,16 @@ Step 1: Define the route in `web.php`
 Open your `web.php` file located in the `routes` directory and add the following route definition:
 
 ```php
-Route::delete('/posts/{id}/delete', 'PostController@delete')->name('posts.delete');
+
+use App\Http\Controllers\PostController;
+
+Route::delete('/posts/{id}/delete', [PostController::class, 'softDelete'])->name('posts.softDelete');
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
 ```
 
-This route definition specifies that when a DELETE request is made to the URL pattern "/posts/{id}/delete", it should be handled by the `delete` method of the `PostController` class.
+This route definition specifies that when a DELETE request is made to the URL `/posts/{id}/delete`, it should be handled by the `softDelete` method of the `PostController` class. The `name('posts.softDelete')` method is used to assign a name to the route for generating URLs.
 
 Step 2: To create the `PostController.php` file. Run the following command to generate the `PostController`:
 
@@ -286,20 +292,29 @@ Step 3: Open the `PostController.php` file and Implement the `delete` method in 
 
 ```php
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
 
+
 class PostController extends Controller
 {
-    public function delete($id)
+    
+    public function index()
+    {
+        $posts = Post::all();
+
+        return view('posts', compact('posts'));
+    }
+
+
+    public function softDelete($id)
     {
         $post = Post::findOrFail($id);
         $post->delete();
 
-        return redirect()->route('posts.index')->with('success', 'Post deleted successfully.');
+        return redirect()->route('posts.index')->with('success', 'Post soft deleted successfully.');
     }
 }
 ```
