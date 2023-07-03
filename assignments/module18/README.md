@@ -95,7 +95,7 @@ The Category class defines two properties:
 **fillable**: This property is an array of the attributes that can be filled in when creating or updating a category. In this case, the only fillable attribute is the name attribute.
 
 
-**posts**: This property is a relationship that returns all of the posts that are associated with the category. The posts relationship is a hasMany relationship, which means that each category can have many posts. The inverse of this relationship is the category relationship on the Product model.The `posts()` method returns a collection of Product objects that are associated with the current Category object. The `posts()` method uses the `hasMany()` method from the Model class. The `hasMany()` method takes a single argument, which is the class name of the related model. In this case, the related model is the Product class.
+**posts**: This property is a relationship that returns all of the posts that are associated with the category. The posts relationship is a hasMany relationship, which means that each category can have many posts. The inverse of this relationship is the category relationship on the Post model. The `posts()` method returns a collection of Post objects that are associated with the current Category object. The `posts()` method uses the `hasMany()` method from the Model class. The `hasMany()` method takes a single argument, which is the class name of the related model. In this case, the related model is the Post class.
 
  ### Task 3:
 Write a migration file to add a foreign key constraint to the "posts" table. The foreign key should reference the "categories" table on the "category_id" column.
@@ -230,7 +230,7 @@ foreach ($posts as $post) {
 ```
 This code will print out the title of each post and the name of the category that the post belongs to.
 ### Task 6:
-    Implement a method in the "Post" model to get the total number of posts belonging to a specific category. The method should accept the category ID as a parameter and return the count.
+Implement a method in the "Post" model to get the total number of posts belonging to a specific category. The method should accept the category ID as a parameter and return the count.
 ### Answer
 To implement the method in the `"Post"` model to get the total number of posts belonging to a specific category, we can follow these steps:
 
