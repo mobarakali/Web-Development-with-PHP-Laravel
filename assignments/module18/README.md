@@ -376,19 +376,20 @@ Write a Blade template to display all posts and their associated categories. Use
 ### Answer
 
 ### Task 10:
-    Create a new route in the web.php file to handle the following URL pattern: "/categories/{id}/posts". Implement the corresponding controller method to retrieve all posts belonging to a specific category. The category ID should be passed as a parameter to the method.
+Create a new route in the web.php file to handle the following URL pattern: "/categories/{id}/posts". Implement the corresponding controller method to retrieve all posts belonging to a specific category. The category ID should be passed as a parameter to the method.
 ### Answer
 
 ### Task 11:
-    Implement a method in the "Category" model to get the latest post associated with the category. The method should return the post object.
+Implement a method in the "Category" model to get the latest post associated with the category. The method should return the post object.
 ### Answer
 
 ### Task 12:
-    Write a Blade template to display the latest post for each category. Use a loop to iterate over the categories and display the post details.
+Write a Blade template to display the latest post for each category. Use a loop to iterate over the categories and display the post details.
 ### Answer
 
 
 > Submission Instruction :
 
     Please submit your github repository link.
+    https://github.com/mobarakali/Web-Development-with-PHP-Laravel/tree/main/assignments/module18
 
