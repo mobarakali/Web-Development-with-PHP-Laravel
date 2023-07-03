@@ -275,8 +275,9 @@ Route::delete('/posts/{id}/delete', [PostController::class, 'softDelete'])->name
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
 ```
+This route definition specifies that when a DELETE request is made to the URL `/posts/{id}/delete`, it should be handled by the `softDelete` method of the `PostController` class. The `name('posts.softDelete')` method is used to assign a name to the route for generating URLs. The `name()` method takes a single argument, which is the name of the route. In this case, the name of the route is `posts.softDelete`. 
 
-This route definition specifies that when a DELETE request is made to the URL `/posts/{id}/delete`, it should be handled by the `softDelete` method of the `PostController` class. The `name('posts.softDelete')` method is used to assign a name to the route for generating URLs.
+The second route definition specifies that when a GET request is made to the URL `/posts`, it should be handled by the `index` method of the `PostController` class. The `name('posts.index')` method is used to assign a name to the route for generating URLs. The `name()` method takes a single argument, which is the name of the route. In this case, the name of the route is `posts.index`.
 
 Step 2: To create the `PostController.php` file. Run the following command to generate the `PostController`:
 
@@ -300,7 +301,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    
+
     public function index()
     {
         $posts = Post::all();
@@ -321,11 +322,49 @@ class PostController extends Controller
 
 In the `delete` method, we first retrieve the post with the given ID using `findOrFail()` to ensure that the post exists. Then, we call the `delete()` method on the post model to soft delete the record.
 
-Finally, we redirect the user to a specified route (e.g., `posts.index`) and include a success flash message using the `with()` method.
+Finally, we redirect the user to a specified route (e.g., `posts.index`) and include a success flash message using the `with()` method.  We have also created `index()` methode to show the posts in the `posts.blade.php` file. Which will be discussed in the next step.
 
-Make sure to replace `'posts.index'` with the actual route name of the page where you want to redirect the user after deleting the post.
+Step 4: Now we need to create a Blade template file named `posts.blade.php`, so we can save it in the `resources/views` directory of Laravel project.
 
-That's it! You have now created a new route and implemented the corresponding controller method to delete a post by its ID using soft delete. When a DELETE request is made to the specified URL pattern, the corresponding controller method will be executed, and the post will be soft deleted.
+Here's the content of the` posts.blade.php` file:
+
+```php
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+
+    <h1>Posts</h1>
+
+    @foreach($posts as $post)
+        <div>
+            <h3>{{ $post->title }}</h3>
+            <p>{{ $post->content }}</p>
+
+            <form action="{{ route('posts.softDelete', $post->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+    @endforeach
+    
+</body>
+</html>
+```
+
+In this example, we assume that you have a variable `$posts` containing the collection of posts that you want to display. The `@foreach` loop iterates over each post and generates the HTML code for the post's title, content, and the delete form.
+
+The form's action attribute is set to the `posts.softDelete` route, with the post's ID passed as a parameter. This will generate the URL for the soft delete route for the specific post.
+
+Inside the form, we include the `@csrf` directive to generate a CSRF token, which is required for security purposes. The `@method('DELETE')` directive is used to override the form's method and send a DELETE request to the server when the form is submitted.
+
+Finally, the submit button allows the user to trigger the deletion of the post when clicked.
 
 ### Task 8:
 Implement a method in the "Post" model to get all posts that have been soft deleted. The method should return a collection of soft deleted posts.
