@@ -78,11 +78,12 @@ class Category extends Model
         'name',
     ];
 
-    // Assume that one category has many products (one-to-many relationship)
+    // Assume that one category has many Posts (one-to-many relationship)
     // We can write the relationship like this:
-    public function products()
+
+    public function posts()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Post::class);
     }
 }
 
@@ -94,7 +95,7 @@ The Category class defines two properties:
 **fillable**: This property is an array of the attributes that can be filled in when creating or updating a category. In this case, the only fillable attribute is the name attribute.
 
 
-**products**: This property is a relationship that returns all of the products that are associated with the category. The products relationship is a hasMany relationship, which means that each category can have many products. The inverse of this relationship is the category relationship on the Product model.The `products()` method returns a collection of Product objects that are associated with the current Category object. The `products()` method uses the `hasMany()` method from the Model class. The `hasMany()` method takes a single argument, which is the class name of the related model. In this case, the related model is the Product class.
+**posts**: This property is a relationship that returns all of the posts that are associated with the category. The posts relationship is a hasMany relationship, which means that each category can have many posts. The inverse of this relationship is the category relationship on the Product model.The `posts()` method returns a collection of Product objects that are associated with the current Category object. The `posts()` method uses the `hasMany()` method from the Model class. The `hasMany()` method takes a single argument, which is the class name of the related model. In this case, the related model is the Product class.
 
  ### Task 3:
 Write a migration file to add a foreign key constraint to the "posts" table. The foreign key should reference the "categories" table on the "category_id" column.
