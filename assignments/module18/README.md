@@ -247,8 +247,7 @@ The above code defines a method called `countPosts()` that accepts a category ID
 ```php 
 Route::get('/posts/{id}/count', function ($id) {
     $post = new Post();
-    $count = $post->countPosts($id);
-    return $count;
+    return $post->countPosts($id);
 });
 ```
 The above code defines a route that accepts a category ID as a parameter. The route uses the `countPosts()` method from the Post model to get the total number of posts belonging to the category. The route returns the count as a response.
@@ -259,7 +258,7 @@ The above code defines a route that accepts a category ID as a parameter. The ro
 
 
 ### Task 7:
-    Create a new route in the web.php file to handle the following URL pattern: "/posts/{id}/delete". Implement the corresponding controller method to delete a post by its ID. Soft delete should be used.
+Create a new route in the web.php file to handle the following URL pattern: "/posts/{id}/delete". Implement the corresponding controller method to delete a post by its ID. Soft delete should be used.
 ### Answer
 
 To create a new route in the `web.php` file and implement the corresponding controller method to delete a post by its ID using soft delete, follow these steps:
@@ -273,8 +272,17 @@ Route::delete('/posts/{id}/delete', 'PostController@delete')->name('posts.delete
 
 This route definition specifies that when a DELETE request is made to the URL pattern "/posts/{id}/delete", it should be handled by the `delete` method of the `PostController` class.
 
-Step 2: Implement the `delete` method in the controller
-Open your `PostController.php` file located in the `app/Http/Controllers` directory (if it doesn't exist, you can create it) and add the following method:
+Step 2: To create the `PostController.php` file. Run the following command to generate the `PostController`:
+
+```bash
+php artisan make:controller PostController
+```
+
+This command will create a new `PostController.php` file in the `app/Http/Controllers` directory of your Laravel project.
+
+
+Step 3: Open the `PostController.php` file and Implement the `delete` method in the controller. Your `PostController.php` file should look like this:
+
 
 ```php
 <?php
@@ -305,12 +313,12 @@ Make sure to replace `'posts.index'` with the actual route name of the page wher
 That's it! You have now created a new route and implemented the corresponding controller method to delete a post by its ID using soft delete. When a DELETE request is made to the specified URL pattern, the corresponding controller method will be executed, and the post will be soft deleted.
 
 ### Task 8:
-    Implement a method in the "Post" model to get all posts that have been soft deleted. The method should return a collection of soft deleted posts.
+Implement a method in the "Post" model to get all posts that have been soft deleted. The method should return a collection of soft deleted posts.
 
 ### Answer
 
  #### Task 9:
-    Write a Blade template to display all posts and their associated categories. Use a loop to iterate over the posts and display their details.
+Write a Blade template to display all posts and their associated categories. Use a loop to iterate over the posts and display their details.
 ### Answer
 
 ### Task 10:
