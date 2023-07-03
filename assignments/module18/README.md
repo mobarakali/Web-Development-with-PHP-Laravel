@@ -13,23 +13,23 @@ Create a new migration file to add a new table named "categories" to the databas
 ### Answer
 Here are the steps on how to create a new migration file to add a `"categories"` table with the specified columns in a Laravel project:
 
-1. Open the terminal and navigate to the root directory of the Laravel project.
-2. Run the following command to create a new migration file:
+1. Open the terminal and navigate to the root directory of the Laravel project. Run the following command to create a new migration file:
 ```
 php artisan make:migration create_categories_table
 ```
-This will create a new migration file in the `database/migrations` directory. The name of the file will be prefixed with the timestamp of when the migration was created.
+This will create a new migration file with the name `create_categories_table` in the `database/migrations` directory. The name of the file will be prefixed with the timestamp of when the migration was created.
 
-3. Open the newly created migration file and edit the `up()` method to add the following code:
+2. Open the newly created migration file and edit the `up()` method to add the following code:
 
 ```
 Schema::create('categories', function (Blueprint $table) {
-    $table->increments('id');
+    $table->id();
     $table->string('name');
-    $table->timestamps();
+    $table->timestamp('created_at')->useCurrent();
+    $table->timestamp('updated_at')->useCurrent();
 });
 ```
-This code will create a new table called categories with the following columns:
+In the code above, the up method is used to define the table structure according to our needs. This code will create a new table called categories with the following columns after **Step 3** is done:
 
 > id: The primary key of the table.
 
@@ -39,7 +39,7 @@ This code will create a new table called categories with the following columns:
 
 > updated_at: A timestamp column that stores the date and time the category was last updated.
 
-4. Save the migration file and run the following command to migrate the changes to the database:
+3. Save the migration file and run the following command to migrate the changes to the database:
 ```
 php artisan migrate
 ```
@@ -49,7 +49,7 @@ After following these steps, we will have a new migration file that will add a c
 
 
 ### Task 2:
-    Create a new model named "Category" associated with the "categories" table. Define the necessary properties and relationships.
+Create a new model named "Category" associated with the "categories" table. Define the necessary properties and relationships.
 ### Answer
 To create a new model named `"Category"` associated with the `"categories"` table in Laravel, we can follow these steps:
 
@@ -62,19 +62,24 @@ php artisan make:model Category
 This command will generate a new model file named Category.php in the app directory.
 
 > Step 2: Define the Model Properties and Relationships
-We need to open the generated Category.php model file using a text editor, and define the necessary properties and relationships for the "Category" model. Here's an example:
+We need to open the edit the `Category.php` model file and define the necessary properties and relationships for the `"Category"` model. Here's an example:
 
 ```
-namespace App;
+namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = ['name'];
-    
-    // Relationships
-    // For example, a Category may have many products
+//    use HasFactory;
+    protected $table = 'categories';
+    protected $fillable = [
+        'name',
+    ];
+
+    // Assume that one category has many products (one-to-many relationship)
+    // We can write the relationship like this:
     public function products()
     {
         return $this->hasMany(Product::class);
@@ -87,9 +92,10 @@ The above code defines a class called `Category`. This class extends the Model c
 
 The Category class defines two properties:
 
-fillable: This property is an array of the attributes that can be filled in when creating or updating a category. In this case, the only fillable attribute is the name attribute.
-products: This property is a relationship that returns all of the products that are associated with the category. The products relationship is a hasMany relationship, which means that each category can have many products. The inverse of this relationship is the category relationship on the Product model.
-The products() method returns a collection of Product objects that are associated with the current Category object. The products() method uses the hasMany() method from the Model class. The hasMany() method takes a single argument, which is the class name of the related model. In this case, the related model is the Product class.
+**fillable**: This property is an array of the attributes that can be filled in when creating or updating a category. In this case, the only fillable attribute is the name attribute.
+
+
+**products**: This property is a relationship that returns all of the products that are associated with the category. The products relationship is a hasMany relationship, which means that each category can have many products. The inverse of this relationship is the category relationship on the Product model.The `products()` method returns a collection of Product objects that are associated with the current Category object. The `products()` method uses the `hasMany()` method from the Model class. The `hasMany()` method takes a single argument, which is the class name of the related model. In this case, the related model is the Product class.
 
  ### Task 3:
     Write a migration file to add a foreign key constraint to the "posts" table. The foreign key should reference the "categories" table on the "category_id" column.
