@@ -97,7 +97,7 @@ The Category class defines two properties:
 **products**: This property is a relationship that returns all of the products that are associated with the category. The products relationship is a hasMany relationship, which means that each category can have many products. The inverse of this relationship is the category relationship on the Product model.The `products()` method returns a collection of Product objects that are associated with the current Category object. The `products()` method uses the `hasMany()` method from the Model class. The `hasMany()` method takes a single argument, which is the class name of the related model. In this case, the related model is the Product class.
 
  ### Task 3:
-    Write a migration file to add a foreign key constraint to the "posts" table. The foreign key should reference the "categories" table on the "category_id" column.
+Write a migration file to add a foreign key constraint to the "posts" table. The foreign key should reference the "categories" table on the "category_id" column.
 
 ### Answer
 To create a migration file using the command line in Laravel, we can use the `make:migration` Artisan command. Here's an example command to generate the migration file we need:
@@ -158,7 +158,7 @@ This will create the foreign key constraint in the posts table.
 
 
  ### Task 4:
-    Create a relationship between the "Post" and "Category" models. A post belongs to a category, and a category can have multiple posts.
+Create a relationship between the "Post" and "Category" models. A post belongs to a category, and a category can have multiple posts.
 ### Answer
 we can create a relationship between the `"Post"` and `"Category"` models in Laravel by following these steps:
 ```
@@ -259,7 +259,7 @@ The above code defines a route that accepts a category ID as a parameter. The ro
 > Step 4: Open the browser and navigate to the following URL: `http://localhost:8000/posts/2/count`. This will return the total number of posts belonging to the category with ID 2.
 
 
-    
+
 
 ### Task 7:
     Create a new route in the web.php file to handle the following URL pattern: "/posts/{id}/delete". Implement the corresponding controller method to delete a post by its ID. Soft delete should be used.
