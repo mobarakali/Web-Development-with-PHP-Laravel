@@ -370,6 +370,26 @@ Finally, the submit button allows the user to trigger the deletion of the post w
 Implement a method in the "Post" model to get all posts that have been soft deleted. The method should return a collection of soft deleted posts.
 
 ### Answer
+To implement a method in the `"Post"` model to retrieve all soft deleted posts, we can use Laravel's built-in functionality for soft deleting and querying soft deleted records. Here's an example of how you can achieve this:
+
+```php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Post extends Model
+{
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+
+    public function getSoftDeletedPosts()
+    {
+        return $this->onlyTrashed()->get();
+    }
+}
+```
 
  #### Task 9:
 Write a Blade template to display all posts and their associated categories. Use a loop to iterate over the posts and display their details.
