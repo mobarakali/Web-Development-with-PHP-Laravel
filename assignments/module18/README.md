@@ -1,14 +1,16 @@
 # মডিউল ১৮ এর এসাইনমেন্ট
 ### Task 1:
-    Create a new migration file to add a new table named "categories" to the database. The table should have the following columns:
+Create a new migration file to add a new table named "categories" to the database. The table should have the following columns:
 
-    id (primary key, auto-increment)
-    name (string)
-    created_at (timestamp)
-    updated_at (timestamp)
+> id (primary key, auto-increment)
+
+> name (string)
+
+> created_at (timestamp)
+
+> updated_at (timestamp)
 
 ### Answer
-
 Here are the steps on how to create a new migration file to add a `"categories"` table with the specified columns in a Laravel project:
 
 1. Open the terminal and navigate to the root directory of the Laravel project.
